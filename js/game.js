@@ -2,6 +2,7 @@
  * Created by henrikloof on 15-05-27.
  */
 
+var points = 0;
 var ordLista = ["mjauu", "malin", "banan"];
 
 var valtOrd = ordLista[Math.floor(Math.random() * 3)];
@@ -9,13 +10,21 @@ var valtOrd = ordLista[Math.floor(Math.random() * 3)];
 console.log(valtOrd);
 
 var button = document.getElementsByTagName("button")[0]; //[] väljer första elementet i listan som det sparas ner i
-button.addEventListener("click", function(){
+button.addEventListener("click", function() {
     var användarOrd = document.getElementsByTagName("input")[0].value;
 
-    if(användarOrd === valtOrd){
+    if (användarOrd === valtOrd) {
         alert("GRATTIS!")
     }
-    else{
+    else {
         alert("Försök igen!")
     }
+
+    if (valtOrd === användarOrd)
+    {
+        points += 5000;
+
+        alert("Grattis, du vann " + points + " poäng!");
+    }
 });
+
